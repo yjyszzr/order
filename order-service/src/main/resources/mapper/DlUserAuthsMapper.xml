@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dl.shop.order.dao2.DlUserAuthsMapper">
+  <resultMap id="BaseResultMap" type="com.dl.shop.order.model.DlUserAuths">
+    <!--
+      WARNING - @mbg.generated
+    -->
+	  <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="third_user_id" jdbcType="INTEGER" property="thirdUserId" />
+    <result column="third_mobile" jdbcType="VARCHAR" property="thirdMobile" />
+    <result column="third_pass" jdbcType="VARCHAR" property="thirdPass" />
+    <result column="third_salt" jdbcType="VARCHAR" property="thirdSalt" />
+  </resultMap>
+  
+  <insert id="insertWithId"  parameterType="com.dl.shop.order.model.DlUserAuths" useGeneratedKeys="true" keyProperty="id">
+	INSERT INTO dl_user_auths(id,user_id,third_user_id,third_mobile,third_pass,third_salt)
+	VALUES(#{id},#{userId},#{thirdUserId},#{thirdMobile},#{thirdPass},#{thirdSalt})
+  </insert>
+
+  <select id="getUserAuthById" resultMap="BaseResultMap" >
+  	select * from dl_user_auths where user_id =#{userId}
+  </select>
+
+
+    <select id="delUserAuthById" resultMap="BaseResultMap" >
+        delete from dl_user_auths where user_id =#{userId}
+    </select>
+
+    <select id="countBindThird" resultType="Integer">
+        select count(1) from dl_user_auths where third_user_id =#{thirdUserId}
+    </select>
+
+</mapper>

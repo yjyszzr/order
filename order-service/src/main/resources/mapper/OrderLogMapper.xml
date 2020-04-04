@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dl.shop.order.dao.OrderLogMapper">
+  <resultMap id="BaseResultMap" type="com.dl.shop.order.model.OrderLog">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="show_name" jdbcType="VARCHAR" property="showName" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="pay_status" jdbcType="BIT" property="payStatus" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+    <result column="add_ip" jdbcType="VARCHAR" property="addIp" />
+  </resultMap>
+</mapper>

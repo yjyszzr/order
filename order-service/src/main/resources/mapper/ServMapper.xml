@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dl.shop.order.dao.ServMapper">
+  <resultMap id="BaseResultMap" type="com.dl.shop.order.model.Serv">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="servId" />
+    <result column="logo" jdbcType="VARCHAR" property="logo" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="show" jdbcType="INTEGER" property="show" />
+    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+    
+  </resultMap>
+ 
+</mapper>

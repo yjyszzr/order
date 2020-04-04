@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dl.shop.order.dao3.LotteryMatchMapper">
+  <resultMap id="BaseResultMap" type="com.dl.shop.order.model.LotteryMatch">
+    <id column="match_id" jdbcType="INTEGER" property="matchId" />
+    <result column="league_id" jdbcType="INTEGER" property="leagueId" />
+    <result column="league_name" jdbcType="VARCHAR" property="leagueName" />
+    <result column="league_addr" jdbcType="VARCHAR" property="leagueAddr" />
+    <result column="changci_id" jdbcType="INTEGER" property="changciId" />
+    <result column="changci" jdbcType="VARCHAR" property="changci" />
+    <result column="home_team_id" jdbcType="INTEGER" property="homeTeamId" />
+    <result column="home_team_name" jdbcType="VARCHAR" property="homeTeamName" />
+    <result column="home_team_abbr" jdbcType="VARCHAR" property="homeTeamAbbr" />
+    <result column="home_team_rank" jdbcType="VARCHAR" property="homeTeamRank" />
+    <result column="visiting_team_id" jdbcType="INTEGER" property="visitingTeamId" />
+    <result column="visiting_team_name" jdbcType="VARCHAR" property="visitingTeamName" />
+    <result column="visiting_team_abbr" jdbcType="VARCHAR" property="visitingTeamAbbr" />
+    <result column="visiting_team_rank" jdbcType="VARCHAR" property="visitingTeamRank" />
+    <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
+    <result column="show_time" jdbcType="TIMESTAMP" property="showTime" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="is_show" jdbcType="INTEGER" property="isShow" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+    <result column="match_sn" jdbcType="VARCHAR" property="matchSn" />
+    <result column="first_half" jdbcType="VARCHAR" property="firstHalf" />
+    <result column="whole" jdbcType="VARCHAR" property="whole" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_hot" jdbcType="INTEGER" property="isHot" />
+  </resultMap>
+   
+	<select id="getByMatchId" resultMap="BaseResultMap">
+		select * from dl_match_basketball where match_id=#{matchId} and status = 1;
+	</select>
+  
+</mapper>

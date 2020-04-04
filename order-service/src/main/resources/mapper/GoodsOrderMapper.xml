@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dl.shop.order.dao.GoodsOrderMapper">
+  <resultMap id="BaseResultMap" type="com.dl.shop.order.model.GoodsOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="order_pic" jdbcType="VARCHAR" property="orderPic" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="contacts_name" jdbcType="VARCHAR" property="contactsName" />
+  </resultMap>
+  <insert id="saveOrder"  parameterType="com.dl.shop.order.model.GoodsOrder"  useGeneratedKeys="true"  keyProperty="id" >
+ 	 	insert into dl_goods_order (description,goods_id,order_pic,price) value(#{description},#{goodsId},#{orderPic},#{price})
+       
+  </insert>
+  
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dl.shop.order.dao.StoreMapper">
+  <resultMap id="BaseResultMap" type="com.dl.shop.order.model.Store">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="storeId" />
+    <result column="logo" jdbcType="VARCHAR" property="logo" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="img_wechat" jdbcType="VARCHAR" property="imgWechat" />
+    <result column="coll_num" jdbcType="INTEGER" property="collNum" />
+    <result column="biz_permit" jdbcType="INTEGER" property="bizPermit" />
+    <result column="cooper_auth" jdbcType="INTEGER" property="cooperAuth" />
+    <result column="biz_permit_url" jdbcType="INTEGER" property="bizPermitUrl" />
+    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+    
+  </resultMap>
+  
+  
+</mapper>
