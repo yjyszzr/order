@@ -1328,7 +1328,7 @@ public class OrderService extends BaseOrderService {
 				od.setMatchResult(getMatchResult(orderDetail.getTicketData(), lotteryRewardByIssueDTO.getRewardData(), issue));
 				orderDetailList.add(od);
 			}
-			return null;//updateOrderDetailByReward(orderDetailList);
+			return 0;//updateOrderDetailByReward(orderDetailList);
 		}
 		return 1;
 	}
@@ -1375,7 +1375,7 @@ public class OrderService extends BaseOrderService {
 					orderDetailList.add(od);
 				}
 			}
-			return null;//updateOrderDetailByReward(orderDetailList);
+			return 0;//updateOrderDetailByReward(orderDetailList);
 		}
 		return 1;
 	}
