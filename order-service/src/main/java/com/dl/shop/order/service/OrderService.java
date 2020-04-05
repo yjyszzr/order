@@ -1393,33 +1393,33 @@ public class OrderService extends BaseOrderService {
 	 * 
 	 * @param list
 	 */
-	public int updateOrderStatusRewarded(List<String> list) {
-		Connection conn = null;
-		try {
-			Class.forName(dbDriver);
-			conn = (Connection) DriverManager.getConnection(dbUrl, dbUserName, dbPass);
-			conn.setAutoCommit(false);
-			String sql = "update dl_order set order_status= ? where order_sn = ?";
-			PreparedStatement prest = (PreparedStatement) conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			for (int i = 0, size = list.size(); i < size; i++) {
-				prest.setInt(1, ProjectConstant.ORDER_STATUS_ALREADY);
-				prest.setString(2, list.get(i));
-				prest.addBatch();
-			}
-			prest.executeBatch();
-			conn.commit();
-			conn.close();
-		} catch (Exception ex) {
-			try {
-				conn.rollback();
-			} catch (Exception e) {
-				e.printStackTrace();
-				log.error(DateUtil.getCurrentDateTime() + "执行updateOrderStatus异常，且回滚异常:" + ex.getMessage());
-				return -1;
-			}
-		}
-		return 1;
-	}
+// 	public int updateOrderStatusRewarded(List<String> list) {
+// 		Connection conn = null;
+// 		try {
+// 			Class.forName(dbDriver);
+// 			conn = (Connection) DriverManager.getConnection(dbUrl, dbUserName, dbPass);
+// 			conn.setAutoCommit(false);
+// 			String sql = "update dl_order set order_status= ? where order_sn = ?";
+// 			PreparedStatement prest = (PreparedStatement) conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+// 			for (int i = 0, size = list.size(); i < size; i++) {
+// 				prest.setInt(1, ProjectConstant.ORDER_STATUS_ALREADY);
+// 				prest.setString(2, list.get(i));
+// 				prest.addBatch();
+// 			}
+// 			prest.executeBatch();
+// 			conn.commit();
+// 			conn.close();
+// 		} catch (Exception ex) {
+// 			try {
+// 				conn.rollback();
+// 			} catch (Exception e) {
+// 				e.printStackTrace();
+// 				log.error(DateUtil.getCurrentDateTime() + "执行updateOrderStatus异常，且回滚异常:" + ex.getMessage());
+// 				return -1;
+// 			}
+// 		}
+// 		return 1;
+// 	}
 
 	/**
 	 * 获取中奖用户及奖金
