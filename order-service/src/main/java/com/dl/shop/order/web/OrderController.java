@@ -302,7 +302,7 @@ public class OrderController {
 	@ApiOperation(value = "更新订单状态公共方法", notes = "更新订单状态公共方法")
 	@RequestMapping(path="/updateOrderStatusRewarded", method=RequestMethod.POST)
 	public BaseResult<Integer> updateOrderStatusRewarded(@Valid @RequestBody OrderSnListParam orderParamListParam){
-		Integer rst = orderService.updateOrderStatusRewarded(orderParamListParam.getOrderSnlist()); 
+		Integer rst = 0;//orderService.updateOrderStatusRewarded(orderParamListParam.getOrderSnlist()); 
 		if(1 != rst) {
 			return ResultGenerator.genFailResult("批量更新已派奖订单状态失败");
 		}
