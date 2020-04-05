@@ -1480,30 +1480,30 @@ public class OrderService extends BaseOrderService {
 	 * 
 	 * @param list
 	 */
-	private int updateOrderDetailByReward(List<OrderDetail> list) {
-		try {
-			Class.forName(dbDriver);
-			Connection conn = (Connection) DriverManager.getConnection(dbUrl, dbUserName, dbPass);
-			conn.setAutoCommit(false);
-			String sql = "update dl_order_detail set match_result = ? where order_detail_id = ?";
-			PreparedStatement prest = (PreparedStatement) conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			for (int i = 0, size = list.size(); i < size; i++) {
-				prest.setString(1, list.get(i).getMatchResult());
-				prest.setInt(2, list.get(i).getOrderDetailId());
-				prest.addBatch();
-			}
-			int[] rsts = prest.executeBatch();
-			conn.commit();
-			conn.close();
-			log.info("updateOrderDetailByReward param detailsize=" + list.size() + " rst size=" + rsts.length);
-			return rsts.length;
-		} catch (SQLException ex) {
-			log.error(ex.getMessage());
-		} catch (ClassNotFoundException ex) {
-			log.error(ex.getMessage());
-		}
-		return 0;
-	}
+// 	private int updateOrderDetailByReward(List<OrderDetail> list) {
+// 		try {
+// 			Class.forName(dbDriver);
+// 			Connection conn = (Connection) DriverManager.getConnection(dbUrl, dbUserName, dbPass);
+// 			conn.setAutoCommit(false);
+// 			String sql = "update dl_order_detail set match_result = ? where order_detail_id = ?";
+// 			PreparedStatement prest = (PreparedStatement) conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+// 			for (int i = 0, size = list.size(); i < size; i++) {
+// 				prest.setString(1, list.get(i).getMatchResult());
+// 				prest.setInt(2, list.get(i).getOrderDetailId());
+// 				prest.addBatch();
+// 			}
+// 			int[] rsts = prest.executeBatch();
+// 			conn.commit();
+// 			conn.close();
+// 			log.info("updateOrderDetailByReward param detailsize=" + list.size() + " rst size=" + rsts.length);
+// 			return rsts.length;
+// 		} catch (SQLException ex) {
+// 			log.error(ex.getMessage());
+// 		} catch (ClassNotFoundException ex) {
+// 			log.error(ex.getMessage());
+// 		}
+// 		return 0;
+// 	}
 
 	/**
 	 * 组装订单数据
