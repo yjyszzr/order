@@ -175,7 +175,7 @@
 	        do.money_paid moneyPaid,do.ticket_amount ticketAmount,do.pay_time payTime,do.add_time addTime,do.max_level maxLevel,do.match_time matchTime,
 	        do.winning_money winningMoney,do.lottery_play_classify_id lotteryPlayClassifyId,do.lottery_classify_id lotteryClassifyId,dlc.lottery_name lotteryName
         from dl_order do left join dl_lottery_classify dlc on do.lottery_classify_id = dlc.lottery_classify_id
-        where do.is_delete = 0 and do.user_id = #{userId} and do.add_time &gt; 1541061937 and do.order_status in 
+        where do.is_delete = 0 and do.user_id = #{userId} and do.order_status in 
             <foreach collection="statusList" item="item" index="index" open="(" separator="," close=")">
             	#{item}
             </foreach>
