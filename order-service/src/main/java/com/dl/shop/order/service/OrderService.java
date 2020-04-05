@@ -1328,7 +1328,7 @@ public class OrderService extends BaseOrderService {
 				od.setMatchResult(getMatchResult(orderDetail.getTicketData(), lotteryRewardByIssueDTO.getRewardData(), issue));
 				orderDetailList.add(od);
 			}
-			return updateOrderDetailByReward(orderDetailList);
+			return null;//updateOrderDetailByReward(orderDetailList);
 		}
 		return 1;
 	}
@@ -1375,7 +1375,7 @@ public class OrderService extends BaseOrderService {
 					orderDetailList.add(od);
 				}
 			}
-			return updateOrderDetailByReward(orderDetailList);
+			return null;//updateOrderDetailByReward(orderDetailList);
 		}
 		return 1;
 	}
@@ -3956,9 +3956,9 @@ public class OrderService extends BaseOrderService {
 			}
 		}
 		log.info("updateOrderMatchResult 准备去执行数据库更新操作：size=" + orderDetailList.size());
-		updateOrderDetailByReward(orderDetailList);
+		//updateOrderDetailByReward(orderDetailList);
 		log.info("updateOrderMatchResult 准备去执行数据库更新取消赛事结果操作：size=" + cancelList.size());
-		updateOrderDetailByReward(cancelList);
+		//updateOrderDetailByReward(cancelList);
 	}
 
 	/**
