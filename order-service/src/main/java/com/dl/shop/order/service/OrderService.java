@@ -47,8 +47,6 @@ import com.dl.shop.payment.param.RollbackOrderAmountParam;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.util.StringUtil;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import io.jsonwebtoken.lang.Collections;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.BeanUtils;
